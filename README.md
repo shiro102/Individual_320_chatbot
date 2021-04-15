@@ -14,9 +14,9 @@ Link for the individual demo:
 ## Github URL: <br>https://github.com/shiro102/Individual_320_chatbot
 
 ## Contents:
-1/ Intro To The Project (which can be read in the IndividualReport.md) <br>
-2/ The Software Development Life Cycles (which can be read in the IndividualReport.md or SDLC, WBS and Gantt chart.md)<br>
-3/ New APIs (which can be read in List of new API.md) <br>
+1/ Intro To The Project (which also can be read in the Github's IndividualReport.md) <br>
+2/ The Software Development Life Cycles (which also can be read in the Github's IndividualReport.md or SDLC, WBS and Gantt chart.md)<br>
+3/ New APIs (which also can be read in the Github's List of new API.md) <br>
 4/ Credits <br>
 
 # ***1/Intro to the project***
