@@ -19,8 +19,7 @@ Link for the individual demo:
 3/ New APIs (which can be read in List of new API.md) <br>
 4/ Credits <br>
 
-# 1/Intro to the project
--------------------------
+# ***1/Intro to the project***
 ## Describe your topic/interest (context of the chatbot, who will use it, etc. )
 
 In this project, we developed an interactive conversational agent that responds to user input. In response to the user, the agent generates sentences as output. There are 2 types of target users. The first type of target users includes anime and manga lovers who would love to talk about them and know more about it. The second type of target users includes anyone who are interested in Japanese culture. There are 2 types of topics as well. The first type of topic of the conversation is about the general information and personal preference of anime. The second type of topic of the conversation is about the general information of Japan such as people, religion, food, samurai and so on.
@@ -144,7 +143,7 @@ There are 12 classes used in the code: nltk, json, pickle, numpy, keras, and tki
 <br>
 
 
-# 2/The Software Development Life Cycles:
+# ***2/The Software Development Life Cycles:***
 
 <br>
 
@@ -625,7 +624,7 @@ Turn-2 User:  Do you know about Jujutsu Kaisen?
  ![image](https://user-images.githubusercontent.com/31243905/110843456-51ab8080-82ce-11eb-9743-b745f19f0e4e.png)
 
 
-# New APIs implementations:
+# ***New APIs implementations:***
 ## Wikipedia API
 - Whenever the user asks for something that is not in the database, the chatbot looks up for the keyword and search for that keyword in Wikipedia database.
 - In the example below, the bot recognizes "CodeGeass" as the keyword and tries searching in wikipedia.
@@ -647,7 +646,7 @@ Turn-2 User:  Do you know about Jujutsu Kaisen?
 ![Twitter3](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png)
 
 
-# Credits
+# ***Credits***
 ## Team Members and nick name used in the project:
 - **Khai Hung Luong (Hung)**: I'm 3rd year comsci student who loves reading books !
 - **Anshul Dhariwal (Anshul)**: I am 3rd year COSC student and loves anything that is interesting to do!!
