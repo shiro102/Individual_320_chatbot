@@ -624,7 +624,7 @@ Turn-2 User:  Do you know about Jujutsu Kaisen?
  ![image](https://user-images.githubusercontent.com/31243905/110843456-51ab8080-82ce-11eb-9743-b745f19f0e4e.png)
 
 
-# ***New APIs implementations:***
+# ***3/New APIs implementations:***
 ## Wikipedia API
 - Whenever the user asks for something that is not in the database, the chatbot looks up for the keyword and search for that keyword in Wikipedia database.
 - In the example below, the bot recognizes "CodeGeass" as the keyword and tries searching in wikipedia.
@@ -646,7 +646,7 @@ Turn-2 User:  Do you know about Jujutsu Kaisen?
 ![Twitter3](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png)
 
 
-# ***Credits***
+# ***4/Credits***
 ## Team Members and nick name used in the project:
 - **Khai Hung Luong (Hung)**: I'm 3rd year comsci student who loves reading books !
 - **Anshul Dhariwal (Anshul)**: I am 3rd year COSC student and loves anything that is interesting to do!!
