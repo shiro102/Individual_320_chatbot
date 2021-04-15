@@ -8,7 +8,7 @@ Link for the second live demo:
 <https://drive.google.com/file/d/1_DKAy2UgbUeMMk6meNT-RrQ6qOt9WOhY/view> 
 <br>
 Link for the individual demo:
-<https://drive.google.com/file/d/1_DKAy2UgbUeMMk6meNT-RrQ6qOt9WOhY/view>
+https://drive.google.com/file/d/1KmlmBcBLjYD77Y2lDeO2dYTfjgiib2Q1/view
 <br>
 
 ## Github URL: <br>https://github.com/shiro102/Individual_320_chatbot
