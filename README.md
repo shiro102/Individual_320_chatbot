@@ -12,6 +12,11 @@ Link for the individual demo:
 
 ## Github URL: <br>https://github.com/shiro102/Individual_320_chatbot
 
+## Contents:
+1/ Intro To The Project (which can be read in the IndividualReport.md)
+2/ The Software Development Life Cycles (which can be read in the IndividualReport.md or SDLC, WBS and Gantt chart.md)
+3/ New APIs (which can be read in List of new API.md)
+4/ Credits
 # 1/Intro to the project
 ## Describe your topic/interest (context of the chatbot, who will use it, etc. )
 
@@ -617,6 +622,29 @@ Turn-2 User:  Do you know about Jujutsu Kaisen?
  ![image](https://user-images.githubusercontent.com/31243905/110843456-51ab8080-82ce-11eb-9743-b745f19f0e4e.png)
 
 
+# New APIs implementations:
+## Wikipedia API
+- Whenever the user asks for something that is not in the database, the chatbot looks up for the keyword and search for that keyword in Wikipedia database.
+- In the example below, the bot recognizes "CodeGeass" as the keyword and tries searching in wikipedia.
+![Wiki](https://media.discordapp.net/attachments/832035518903484458/832035534255423498/unknown.png)
+- If there is no page that matches the information that is asked, the bot will say that it cannot find any match.
+![Wiki](https://cdn.discordapp.com/attachments/832035518903484458/832052705308311582/unknown.png)
+
+## Google translate API
+- Whenever the user asks for something in another language than English, the chatbot automatically translates the sentence to English and processes using the data in the translated sentence. At the end, it translate the reply into the language that the user used. It also apply to the Wiki API. 
+- In the example below, the user uses Vietnamese and Chinese as the input, and the bot then replies in the according languages. However, sometimes because the translation is not accurate, the bot will not receive correct translation of the sentence which is demonstrated in the third line of the Chinese-translation image where the bot says that "I dont understand what 'goodbye' is"
+![Translate](https://media.discordapp.net/attachments/832035518903484458/832046059094016020/Translate.png?width=1379&height=670)
+![Translate2](https://media.discordapp.net/attachments/832035518903484458/832047709531537479/Translate.png?width=1379&height=670)
+
+## Twitter API
+- Whenver user inputs a sentence that includes the keyword "twitter" or "tweet", the chatbot will automatically uses Twitter API to look for any tweets that contain the keyword or profile that has the same name as the keyword. The wikipedia and googletranslate APIs will also work with this API.
+- In the example below, it searches the twitter of Donald Trump and any tweets that contain the keyword "Donald Trump"
+![Twitter](https://media.discordapp.net/attachments/832035518903484458/832050182052773898/unknown.png) ![Twitter2](https://media.discordapp.net/attachments/832035518903484458/832050306053177354/unknown.png) 
+- If there is no profile or tweets that match the keyword, the bot will indicate that there is no one or no tweet that matches the keyword.
+![Twitter3](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png)
+
+
+# Credits
 ## Team Members and nick name used in the project:
 - **Khai Hung Luong (Hung)**: I'm 3rd year comsci student who loves reading books !
 - **Anshul Dhariwal (Anshul)**: I am 3rd year COSC student and loves anything that is interesting to do!!
