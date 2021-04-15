@@ -243,8 +243,9 @@ def send():
                     ChatLog.insert(END," " + translator.translate(res[0], dest=language).text + "\n")
                     try:
                         try:
-                            ChatLog.insert(END, translator.translate(wikipedia.summary(res[2][0], sentences =3), dest=language).text+ "\n\n")
+                            test = wikipedia.summary(res[2][0], sentences =3)
                             ChatLog.insert(END, translator.translate("This is what I found on Wikipedia about "+ res[2][0], dest=language).text + ":\n")
+                            ChatLog.insert(END, translator.translate(wikipedia.summary(res[2][0], sentences =3), dest=language).text+ "\n\n")
                         except:
                             ChatLog.insert(END, translator.translate("Sorry I cannot find any information about " + res[2][0] +" on Wiki, sorry.", dest=language).text + "\n\n")
                     except wikipedia.exceptions.DisambiguationError as e:
