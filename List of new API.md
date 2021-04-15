@@ -15,6 +15,6 @@
 ## Twitter API
 - Whenver user inputs a sentence that includes the keyword "twitter" or "tweet", the chatbot will automatically uses Twitter API to look for any tweets that contain the keyword or profile that has the same name as the keyword. The wikipedia and googletranslate APIs will also work with this API.
 - In the example below, it searches the twitter of Donald Trump and any tweets that contain the keyword "Donald Trump"
-![Translate](https://media.discordapp.net/attachments/832035518903484458/832046059094016020/Translate.png?width=1379&height=670)
+![Twitter](https://media.discordapp.net/attachments/832035518903484458/832050182052773898/unknown.png) ![Twitter2](https://media.discordapp.net/attachments/832035518903484458/832050306053177354/unknown.png) 
 - If there is no profile or tweets that match the keyword, the bot will indicate that there is no one or no tweet that matches the keyword.
-![Translate](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png)
+![Twitter3](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png)
