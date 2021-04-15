@@ -17,4 +17,4 @@
 - In the example below, it searches the twitter of Donald Trump and any tweets that contain the keyword "Donald Trump"
 ![Translate](https://media.discordapp.net/attachments/832035518903484458/832046059094016020/Translate.png?width=1379&height=670)
 - If there is no profile or tweets that match the keyword, the bot will indicate that there is no one or no tweet that matches the keyword.
-![Translate](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png0)
+![Translate](https://media.discordapp.net/attachments/832035518903484458/832053962562994186/unknown.png)
