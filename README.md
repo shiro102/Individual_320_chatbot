@@ -5,18 +5,19 @@ Link for the first live demo:
 <https://drive.google.com/file/d/1r-Z9tOQUw9xpVBAXJCbN5R_DBIHX0QFv/view>
 <br>
 Link for the second live demo:
-<https://drive.google.com/file/d/1_DKAy2UgbUeMMk6meNT-RrQ6qOt9WOhY/view>
+<https://drive.google.com/file/d/1_DKAy2UgbUeMMk6meNT-RrQ6qOt9WOhY/view> 
+<br>
 Link for the individual demo:
 <https://drive.google.com/file/d/1_DKAy2UgbUeMMk6meNT-RrQ6qOt9WOhY/view>
-
+<br>
 
 ## Github URL: <br>https://github.com/shiro102/Individual_320_chatbot
 
 ## Contents:
-1/ Intro To The Project (which can be read in the IndividualReport.md)
-2/ The Software Development Life Cycles (which can be read in the IndividualReport.md or SDLC, WBS and Gantt chart.md)
-3/ New APIs (which can be read in List of new API.md)
-4/ Credits
+1/ Intro To The Project (which can be read in the IndividualReport.md) <br>
+2/ The Software Development Life Cycles (which can be read in the IndividualReport.md or SDLC, WBS and Gantt chart.md)<br>
+3/ New APIs (which can be read in List of new API.md) <br>
+4/ Credits <br>
 # 1/Intro to the project
 ## Describe your topic/interest (context of the chatbot, who will use it, etc. )
 
