@@ -1,7 +1,9 @@
+from logging import error
 from stanfordcorenlp import StanfordCoreNLP
 import nltk
 nltk.download("wordnet")
 nltk.download("punkt")
+nltk.download('averaged_perceptron_tagger')
 from nltk.tag import pos_tag
 import re, string
 from nltk.stem import WordNetLemmatizer
@@ -15,9 +17,17 @@ import json
 import random
 import time
 import wikipedia
+from googletrans import Translator
+import twitter
+
+translator = Translator()
+api = twitter.Api(consumer_key="wFbNAH9knvKdzAu7bCppJ06bP",
+                  consumer_secret="upJoW4B6HzgxWpl8QCW3qIZvcC1ejgnQbZDCF1d3ID5w9okpEh",
+                  access_token_key="895520206428053505-erMLtAdiqYtNq2zlA2L8xOepvWywsdv",
+                  access_token_secret="nlQkkHIHwaWbOREvg8UJHDtHb6XTLkCJDmBV1o16RcEpd")
 
 #Load the intents
-nlp = StanfordCoreNLP(r'D:\COSC 310\Assignments\A2\Test\Test_Synonym\stanford-corenlp-4.2.0')
+nlp = StanfordCoreNLP(r'E:/Study/COSC/310/Projects-chatbot-320/Chat-bot-team-20/code/stanford-corenlp-4.2.0')
 intents = json.loads(open('intents.json').read())
 sentiment = pickle.load(open("SentimentalAnalysis.pkl", "rb"))
 
@@ -30,7 +40,6 @@ try:
     saveData = pickle.load(open("saveData.pkl", "rb"))
 except IOError:
     saveData = [['',{}]]
-
 
 
 
@@ -164,7 +173,11 @@ def send():
     	    #Read the message from user and clear the message window
             msg = EntryBox.get("1.0",'end-1c').strip()
             EntryBox.delete("0.0",END)
-            
+            #Detect the language
+            msg_origin = msg 
+            language = translator.detect(msg).lang
+            msg = translator.translate(msg, dest='en').text
+
             custom_token = remove_noise(word_tokenize(msg))
             for t in custom_token:
                     t = word_tokenize(t)
@@ -183,7 +196,7 @@ def send():
                 ChatLog.config(state=NORMAL)
         
                 ChatLog.image_create(END, image = userimg)
-                ChatLog.insert(END, " : " + msg + '\n\n')
+                ChatLog.insert(END, " : " + msg_origin + '\n\n')
                 ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
                 ChatLog.tag_configure("center", justify='center')
         
@@ -200,32 +213,72 @@ def send():
                         for r in res[2]:
                             search = r + " "
                         res[0] = res[0].replace("%",search)
-                        ChatLog.insert(END," " + res[0] + "\n")
-                        ChatLog.insert(END,"This is what I found on Wikipedia about " + search + ":\n")
+
+                        ChatLog.insert(END," " + translator.translate(res[0], dest=language).text + "\n")
+
                         try:
-                            ChatLog.insert(END, wikipedia.summary(search, sentences =3) + "\n\n")
+                            try:
+                                test = wikipedia.summary(search, sentences =3)
+                                ChatLog.insert(END, translator.translate("This is what I found on Wikipedia about " + search, dest= language).text + ":\n")
+                                ChatLog.insert(END, translator.translate(wikipedia.summary(search, sentences =3), dest=language).text + "\n\n")
+                            except:
+                                ChatLog.insert(END, translator.translate("Sorry I cannot find any information about " + search +" on Wiki, sorry.", dest=language).text + "\n\n")
                         except wikipedia.exceptions.DisambiguationError as e:
-                            ChatLog.insert(END, wikipedia.summary(e.options[0], sentences =3) + "\n\n")
+                            ChatLog.insert(END, translator.translate(wikipedia.summary(e.options[0], sentences =3), dest=language).text + "\n\n")
                     else:
                         res[0] = res[0].replace("%",msg)
-                        ChatLog.insert(END," " + res[0] + "\n\n")
+                        ChatLog.insert(END," " + translator.translate(res[0], dest=language).text + "\n\n")
                 elif emotion == "Positive":
                     ChatLog.insert(END," : ")
                     ChatLog.image_create(END, image = happy)
-                    ChatLog.insert(END," " + res[0] + "\n\n")
+                    ChatLog.insert(END," " + translator.translate(res[0], dest=language).text + "\n\n")
                 elif emotion == "Negative" and res[1] != "noanswer":
                     ChatLog.insert(END, " : I am sorry to hear that " )
                     ChatLog.image_create(END, image = sad)
-                    ChatLog.insert(END, "\n\n" + res[0] + "\n\n")
+                    ChatLog.insert(END, "\n\n" + translator.translate(res[0], dest=language).text+ "\n\n")
                 elif emotion == "Negative" and res[1] == "noanswer" and res[2] != '':
                     ChatLog.insert(END, " : " )
                     ChatLog.image_create(END, image = confused)
                     res[0] = res[0].replace("%",res[2][0])
-                    ChatLog.insert(END," " + res[0] + "\n")
-                    ChatLog.insert(END,"This is what I found on Wikipedia about " + res[2][0] + ":\n")
-                    ChatLog.insert(END, wikipedia.summary(res[2][0], sentences =3) + "\n\n")
+                    ChatLog.insert(END," " + translator.translate(res[0], dest=language).text + "\n")
+                    try:
+                        try:
+                            ChatLog.insert(END, translator.translate(wikipedia.summary(res[2][0], sentences =3), dest=language).text+ "\n\n")
+                            ChatLog.insert(END, translator.translate("This is what I found on Wikipedia about "+ res[2][0], dest=language).text + ":\n")
+                        except:
+                            ChatLog.insert(END, translator.translate("Sorry I cannot find any information about " + res[2][0] +" on Wiki, sorry.", dest=language).text + "\n\n")
+                    except wikipedia.exceptions.DisambiguationError as e:
+                        ChatLog.insert(END, translator.translate(wikipedia.summary(e.options[0], sentences =3), dest=language).text + "\n\n")
                 
-                
+                if "twitter" in msg.lower() or "tweet" in msg.lower():
+                    if res[2] != "":
+                        for r in res[2]:
+                            search = r + " "
+                    else:
+                        search = " "
+                    try:
+                        temp = api.GetUser(screen_name = search)
+                        ChatLog.insert(END, translator.translate("This is information I found on Twitter about " + search, dest=language).text + ":\n")
+                        ChatLog.insert(END, "Twitter_id: " + str(temp.id) + "\n" + "Name: " + str(temp.name) + "\n" + "Followers: " + str(temp.followers_count) + "\n\n")
+                    except:
+                        ChatLog.insert(END, translator.translate("Sorry I cannot find anyone with the same name on Twitter.", dest=language).text + "\n")
+
+                    try:
+                        temp = api.GetSearch(term = search, count = 2, result_type = "popular")
+                        if temp == []:
+                            ChatLog.insert(END, translator.translate("Sorry I cannot find any tweet like that on Twitter", dest=language).text + "\n")
+                        else:
+                            ChatLog.insert(END, translator.translate("This is popular tweet I found on Twitter about " + search, dest=language).text + ":\n")
+                            for t in temp:
+                                ChatLog.insert(END, t.text + "\n\n")
+                    except:
+                        ChatLog.insert(END, translator.translate("Sorry I cannot find any tweet like that on Twitter " + search, dest=language).text + "\n")
+
+                    
+                  
+                        
+
+
                 ChatLog.config(state=DISABLED)
                 ChatLog.yview(END)
                 if saveData[-1][0] == "":

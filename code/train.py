@@ -1,6 +1,6 @@
 from stanfordcorenlp import StanfordCoreNLP
 from nltk.corpus import wordnet as wn
-
+from googletrans import Translator
 import nltk
 from nltk.stem import WordNetLemmatizer
 l = WordNetLemmatizer()
