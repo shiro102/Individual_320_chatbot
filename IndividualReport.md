@@ -8,7 +8,7 @@ Link for the second live demo:
 =======
 Github URL: <br>https://github.com/shiro102/Chat-bot-team-20
 =======
-# Intro to the project
+# 1/Intro to the project
 ## Describe your topic/interest (context of the chatbot, who will use it, etc. )
 
 In this project, we developed an interactive conversational agent that responds to user input. In response to the user, the agent generates sentences as output. There are 2 types of target users. The first type of target users includes anime and manga lovers who would love to talk about them and know more about it. The second type of target users includes anyone who are interested in Japanese culture. There are 2 types of topics as well. The first type of topic of the conversation is about the general information and personal preference of anime. The second type of topic of the conversation is about the general information of Japan such as people, religion, food, samurai and so on.
@@ -132,7 +132,7 @@ There are 12 classes used in the code: nltk, json, pickle, numpy, keras, and tki
 <br>
 
 
-# The Software Development Life Cycles:
+# 2/The Software Development Life Cycles:
 
 <br>
 
