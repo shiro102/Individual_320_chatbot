@@ -9,9 +9,9 @@ Link for the second live demo:
 Link for the individual demo:
 <https://drive.google.com/file/d/1_DKAy2UgbUeMMk6meNT-RrQ6qOt9WOhY/view>
 
-=======
-Github URL: <br>https://github.com/shiro102/Individual_320_chatbot
-=======
+
+## Github URL: <br>https://github.com/shiro102/Individual_320_chatbot
+
 # 1/Intro to the project
 ## Describe your topic/interest (context of the chatbot, who will use it, etc. )
 
