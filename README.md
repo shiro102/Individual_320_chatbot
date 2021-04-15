@@ -663,3 +663,12 @@ https://data-flair.training/blogs/python-chatbot-project/
 
 Here is the link of stanfordcorenlp which is a Python wrapper for Stanford CoreNLP.
 https://github.com/Lynten/stanford-corenlp
+
+Here is the link of googletrans API 
+https://py-googletrans.readthedocs.io/en/latest/
+
+Here is the link of wikipedia API
+https://pypi.org/project/Wikipedia-API/
+
+Here is the link of twitter API 
+https://python-twitter.readthedocs.io/en/latest/
